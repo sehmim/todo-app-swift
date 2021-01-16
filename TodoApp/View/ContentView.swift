@@ -8,31 +8,38 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    
+    @ObservedObject var viewModel = AuthViewModel()
+
     var body: some View {
-        NavigationView {
-            TabView {
-                NewTodos()
-                .tabItem {
-                    Image(systemName: "book")
-                    Text("Todo List")
+        
+        if viewModel.userSession != nil {
+            NavigationView {
+                TabView {
+                    NewTodos()
+                    .tabItem {
+                        Image(systemName: "book")
+                        Text("Todo List")
+                    }
+    
+                    SearchTodos()
+                    .tabItem {
+                        Image(systemName: "magnifyingglass")
+                        Text("Search")
+                    }
+    
+                    DoneTodos()
+                    .tabItem {
+                        Image(systemName: "checkmark")
+                        Text("Done")
+                    }
                 }
-                
-                SearchTodos()
-                .tabItem {
-                    Image(systemName: "magnifyingglass")
-                    Text("Search")
-                }
-                
-                DoneTodos()
-                .tabItem {
-                    Image(systemName: "checkmark")
-                    Text("Done")
-                }
+                .navigationBarTitle("Home")
+                .navigationBarTitleDisplayMode(.inline)
             }
-            .navigationBarTitle("Home")
-            .navigationBarTitleDisplayMode(.inline)
+        } else {
+            ZStack {
+                LoginView()
+            }
         }
     }
 }

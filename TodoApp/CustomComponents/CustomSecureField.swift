@@ -11,6 +11,7 @@ struct CustomSecureField: View {
     @Binding var text: String
     let placeholder: Text
     let imageName: String
+    let isSecure: Bool
     
     var body: some View {
         ZStack (alignment: .leading){
@@ -19,14 +20,24 @@ struct CustomSecureField: View {
                     .foregroundColor(Color(.init(white: 1, alpha: 0.87)))
                     .padding(.leading, 40)
             }
-            
-            HStack (spacing: 16) {
-                Image(systemName: imageName)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 20, height: 20)
-                    .foregroundColor(.white)
-                SecureField("", text: $text)
+            if isSecure {
+                HStack (spacing: 16) {
+                    Image(systemName: imageName)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 20, height: 20)
+                        .foregroundColor(.white)
+                    SecureField("", text: $text)
+                }
+            } else {
+                HStack (spacing: 16) {
+                    Image(systemName: imageName)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 20, height: 20)
+                        .foregroundColor(.white)
+                    TextField("", text: $text)
+                }
             }
         }
         .padding()
