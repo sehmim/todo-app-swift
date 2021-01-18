@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		101186FD25B3872B009F1E47 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101186FC25B3872B009F1E47 /* CustomTextField.swift */; };
+		102C361725B6182600172357 /* Todos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102C361625B6182600172357 /* Todos.swift */; };
+		102C361B25B6198F00172357 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102C361A25B6198F00172357 /* Constants.swift */; };
+		102C361E25B61A6900172357 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102C361D25B61A6900172357 /* Todo.swift */; };
 		10C959D025B0F0970056EC9E /* TodoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C959CF25B0F0970056EC9E /* TodoAppApp.swift */; };
 		10C959D225B0F0970056EC9E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C959D125B0F0970056EC9E /* ContentView.swift */; };
 		10C959D425B0F09B0056EC9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10C959D325B0F09B0056EC9E /* Assets.xcassets */; };
@@ -33,6 +36,9 @@
 
 /* Begin PBXFileReference section */
 		101186FC25B3872B009F1E47 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		102C361625B6182600172357 /* Todos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todos.swift; sourceTree = "<group>"; };
+		102C361A25B6198F00172357 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		102C361D25B61A6900172357 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		10C959CC25B0F0970056EC9E /* TodoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10C959CF25B0F0970056EC9E /* TodoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoAppApp.swift; sourceTree = "<group>"; };
 		10C959D125B0F0970056EC9E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +75,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		102C361925B6198300172357 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				102C361A25B6198F00172357 /* Constants.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		10C959C325B0F0970056EC9E = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +102,7 @@
 		10C959CE25B0F0970056EC9E /* TodoApp */ = {
 			isa = PBXGroup;
 			children = (
+				102C361925B6198300172357 /* Util */,
 				10C95A1925B113910056EC9E /* ModelView */,
 				10C95A1425B113490056EC9E /* Model */,
 				10C959E825B0F4530056EC9E /* CustomComponents */,
@@ -147,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				10C95A1625B1135E0056EC9E /* User.swift */,
+				102C361D25B61A6900172357 /* Todo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -155,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				10C95A1A25B113A10056EC9E /* Auth.swift */,
+				102C361625B6182600172357 /* Todos.swift */,
 			);
 			path = ModelView;
 			sourceTree = "<group>";
@@ -239,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10C95A2025B115AC0056EC9E /* CustomSecureField.swift in Sources */,
+				102C361B25B6198F00172357 /* Constants.swift in Sources */,
 				10C95A1B25B113A10056EC9E /* Auth.swift in Sources */,
 				10C959F225B0F85C0056EC9E /* CustomSearchbar.swift in Sources */,
 				10C959EF25B0F4E10056EC9E /* SearchTodos.swift in Sources */,
@@ -250,9 +268,11 @@
 				10C959E325B0F2690056EC9E /* TodoList.swift in Sources */,
 				10C95A1725B1135E0056EC9E /* User.swift in Sources */,
 				10C959D025B0F0970056EC9E /* TodoAppApp.swift in Sources */,
+				102C361E25B61A6900172357 /* Todo.swift in Sources */,
 				10C95A1225B112F80056EC9E /* SignupView.swift in Sources */,
 				10C959F825B0F97B0056EC9E /* TodoCell.swift in Sources */,
 				101186FD25B3872B009F1E47 /* CustomTextField.swift in Sources */,
+				102C361725B6182600172357 /* Todos.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

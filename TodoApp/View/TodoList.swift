@@ -9,8 +9,6 @@ import SwiftUI
 
 struct NewTodos: View {
     @State var isShwoingNewTodo = false
-    @State var inputTodoTitle: String = ""
-
 
     var body: some View {
         ZStack ( alignment: .bottomTrailing ){
@@ -32,7 +30,7 @@ struct NewTodos: View {
             .background(Color.white)
             .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
             .sheet( isPresented: $isShwoingNewTodo, content: {
-                NewTodo(show: $isShwoingNewTodo, inputTodoTitle: $inputTodoTitle)
+                NewTodo(show: $isShwoingNewTodo, inputTodoTitle: "", inputDesc: "")
             })
         }
     }

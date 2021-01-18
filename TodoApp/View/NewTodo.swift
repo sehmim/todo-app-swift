@@ -9,23 +9,31 @@ import SwiftUI
 
 struct NewTodo: View {
     @Binding var show: Bool
-    @Binding var inputTodoTitle: String
-    
+    @State var inputTodoTitle: String
+    @State var inputDesc: String
+
+    @ObservedObject var viewModel = TodosViewModel()
+
     var body: some View {
         VStack(spacing: 20) {
             TextField("Todo Title...", text: $inputTodoTitle)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
                 .font(Font.system(size: 35))
-            TextField("Details", text: $inputTodoTitle)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .font(.body)
-                .frame(width: .infinity, height: 400, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            TextField("Details", text: $inputDesc)
+                .frame(width: .infinity, height: 400)
+            
+            Button(action: {
+                viewModel.addTodo(title: inputTodoTitle, desc: inputDesc)
+                show.toggle()
+            }, label: {
+                Text("Add Todo")
+            })
+            
         }.padding()
     }
 }
 
 struct NewTodo_Previews: PreviewProvider {
     static var previews: some View {
-        NewTodo(show: .constant(false), inputTodoTitle: .constant(""))
+        NewTodo(show: .constant(false), inputTodoTitle: "", inputDesc: "")
     }
 }

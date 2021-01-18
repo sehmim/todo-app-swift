@@ -58,30 +58,30 @@ class AuthViewModel: ObservableObject {
                         return
                     }
 
-//                    guard let user = result?.user else { return }
+                    guard let user = result?.user else { return }
 
-//                    let data = [ "email" : email,
-//                                 "username" : username.lowercased(),
-//                                 "fullname" : fullname,
-////                                 "profileImageUrl" : profileImageUrl,
-//                                 "uid": user.uid
-//                    ]
+                    let data = [ "email" : email,
+                                 "username" : username.lowercased(),
+                                 "fullname" : fullname,
+//                                 "profileImageUrl" : profileImageUrl,
+                                 "uid": user.uid
+                    ]
 
-//                    Firestore.firestore().collection("users").document(user.uid).setData(data) {
-//                        _ in
-//                            self.userSession = result?.user
-//                            print("DEBUG: Successfully uploaded user data..")
-//                    }
+                    Firestore.firestore().collection("users").document(user.uid).setData(data) {
+                        _ in
+                            self.userSession = result?.user
+                            print("DEBUG: Successfully uploaded user data..")
+                    }
                 }
 //            }
 //        }
 
     }
     
-//    func signOut() {
-//        userSession = nil
-//        try? Auth.auth().signOut()
-//    }
+    func signOut() {
+        userSession = nil
+        try? Auth.auth().signOut()
+    }
     
 //    func fetchUser(){
 //        guard let uid = userSession?.uid else { return }
